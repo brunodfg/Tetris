@@ -1,0 +1,102 @@
+﻿<UserControl 
+    x:Class="brunodfg.tetris.ui.GameArea"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:brunodfg.tetris.ui">
+
+    <!-- #FFF2EBD0 -->
+    <!-- #FFD4D4D4 -->
+    <Grid x:Name="LayoutRoot" KeyDown="Grid_KeyDown" Background="White" HorizontalAlignment="Stretch">
+
+        <Grid HorizontalAlignment="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="140" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Images/tetris.png" HorizontalAlignment="Center" Width="300" Margin="0 5 0 20" Grid.Row="0" />
+
+            <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Score/Level/ClearedRows -->
+                <Grid Grid.Row="0" VerticalAlignment="Top" Margin="0 5 0 5">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock x:Name="txbScore" Grid.Column="0" HorizontalAlignment="Left" />
+                    <TextBlock x:Name="txbLevel" Grid.Column="1" HorizontalAlignment="Center" />
+                    <TextBlock x:Name="txbRows" Grid.Column="2" HorizontalAlignment="Right" />
+
+                </Grid>
+
+                <Border Background="#FFD4D4D4" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Padding="1" CornerRadius="2">
+
+                    <Grid x:Name="TetrisLayout" />
+
+                </Border>
+
+            </Grid>
+
+            <!-- Sidebar -->
+            <Border Grid.Column="1" Grid.Row="1" Margin="0 28 0 0" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="0">
+
+                <Grid HorizontalAlignment="Left">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <local:PiecePreviewControl x:Name="preview1" Grid.Row="0" Margin="5 0 5 40" HorizontalAlignment="Left" />
+
+                    <local:PiecePreviewControl x:Name="preview2" Grid.Row="1" Margin="5 5 5 40" HorizontalAlignment="Left" />
+
+                    <local:PiecePreviewControl x:Name="preview3" Grid.Row="2" Margin="5 5 5 40" HorizontalAlignment="Left" />
+
+                </Grid>
+
+            </Border>
+
+            <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Top">
+
+                <TextBlock Text="P : play/pause game | E : end game | S : slide down" HorizontalAlignment="Center" Margin="0 10 0 0" />
+                <TextBlock Text="Up : rotate counterclockwise | C : rotate clockwise" HorizontalAlignment="Center" Margin="0 5 0 0" />
+                <TextBlock Text="Arrow Keys : move right, left and down" HorizontalAlignment="Center" Margin="0 5 0 0" />
+
+                <!-- Strangely this is needed to allow key events to be captured -->
+                <Button Height="0" />
+
+            </StackPanel>
+
+            <HyperlinkButton 
+                Grid.Row="3" BorderThickness="0"
+                NavigateUri="http://www.logofromdreams.com/logo-Tetris.htm" 
+                Content="Credits for the tetris logo to Igor Syvets" TargetName="_blank" 
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 15 0 5" />
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
