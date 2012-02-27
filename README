@@ -5,6 +5,10 @@
  * 
  * **/
  
-About brunodfg.tetris
-
+Overview
+--------------
 brunodfg.tetris is a silverlight implementation of the famous arcade game tetris. An working example may be found at http://brunodfg.com/arcade/tetris.
+
+License
+--------------
+brunodfg.tetris is available under an MIT-style license. See the LICENSE file
