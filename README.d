@@ -1,14 +1,12 @@
-/*
- * Author: Bruno Gonçalves - brunodfg@gmail.com
- * Url: http://brunodfg.com/
- * Date: 18/02/2012
- * 
- * **/
- 
-Overview
---------------
+brunodfg.tetris
+===============
+
+Description:
+------------
+
 brunodfg.tetris is a silverlight implementation of the famous arcade game tetris. A working example may be found at http://brunodfg.com/arcade/tetris.html
 
-License
---------------
+License:
+--------
+
 brunodfg.tetris is available under an MIT-style license. See the LICENSE file
