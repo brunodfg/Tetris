@@ -6,6 +6,7 @@
 
 using brunodfg.tetris.engine.pieces;
 using System;
+using System.Windows;
 
 namespace brunodfg.tetris.engine
 {
@@ -40,12 +41,12 @@ namespace brunodfg.tetris.engine
         /// <summary>
         /// The x coordinate of this block's point
         /// </summary>
-        public int X { get { return this.Point.X; } }
+        public int X { get { return (int)this.Point.X; } }
 
         /// <summary>
         /// The y coordinate of this block's point
         /// </summary>
-        public int Y { get { return this.Point.Y; } }
+        public int Y { get { return (int)this.Point.Y; } }
 
         /// <summary>
         /// Gets the shape which is filling this specific block. Null if this block is empty
@@ -122,38 +123,6 @@ namespace brunodfg.tetris.engine
             {
                 this.Emptied(this, EventArgs.Empty);
             }
-        }
-
-        #endregion
-    }
-
-    public class Point
-    {
-        #region Properties
-
-        /// <summary>
-        /// The x coordinate
-        /// </summary>
-        public int X { get; set; }
-
-        /// <summary>
-        /// The y coordinate
-        /// </summary>
-        public int Y { get; set; }
-
-        #endregion
-
-        #region Constructors
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="x">The x coordinate</param>
-        /// <param name="y">The y coordinate</param>
-        public Point(int x, int y)
-        {
-            this.X = x;
-            this.Y = y;
         }
 
         #endregion

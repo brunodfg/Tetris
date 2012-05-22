@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
+using System.Windows;
 
 namespace brunodfg.tetris.engine.pieces
 {
@@ -59,8 +60,8 @@ namespace brunodfg.tetris.engine.pieces
         { 
             get 
             {
-                var maxX = this.Template.Max(p => p.X) + 1;
-                var maxY = this.Template.Max(p => p.Y) + 1;
+                var maxX = (int)this.Template.Max(p => p.X) + 1;
+                var maxY = (int)this.Template.Max(p => p.Y) + 1;
 
                 return Math.Max(maxX, maxY);
             } 

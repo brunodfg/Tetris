@@ -68,8 +68,8 @@ namespace brunodfg.tetris.ui
             if (this.Piece != null)
             {
                 var size = this.Piece.Size;
-                var maxX = this.Piece.Template.Max(p => p.X);
-                var maxY = this.Piece.Template.Max(p => p.Y);
+                var maxX = this.Piece.Template.Max(p => (int)p.X);
+                var maxY = this.Piece.Template.Max(p => (int)p.Y);
 
                 #region Create rows and columns for the piece's parts
 
@@ -96,8 +96,8 @@ namespace brunodfg.tetris.ui
                         Background = new SolidColorBrush(this.Piece.Background)
                     };
 
-                    border.SetValue(Grid.ColumnProperty, p.X);
-                    border.SetValue(Grid.RowProperty, maxY - p.Y);
+                    border.SetValue(Grid.ColumnProperty, (int)p.X);
+                    border.SetValue(Grid.RowProperty, maxY - (int)p.Y);
 
                     this.PiecePreviewLayoutRoot.Children.Add(border);
                 });

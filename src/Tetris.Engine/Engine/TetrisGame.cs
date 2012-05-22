@@ -347,9 +347,9 @@ namespace brunodfg.tetris.engine
                 // Deque
                 this.CurrentPiece = this.NextPieces[0];
 
-                var yIncrement = this.Definitions.Height - 1 - this.CurrentPiece.Template.Select(l => l.Y).Max();
+                var yIncrement = this.Definitions.Height - 1 - this.CurrentPiece.Template.Select(l => (int)l.Y).Max();
                 var xIncrement = (this.Definitions.Width - this.CurrentPiece.Size) / 2;
-                var blocksToFill = this.CurrentPiece.Template.Select(point => this.GetBlock(point.X + xIncrement, point.Y + yIncrement)).ToList();
+                var blocksToFill = this.CurrentPiece.Template.Select(point => this.GetBlock((int)point.X + xIncrement, (int)point.Y + yIncrement)).ToList();
 
                 // Do not allow droping a new piece if the drop location is filled
                 if (blocksToFill != null && blocksToFill.All(b => !b.IsFilled))

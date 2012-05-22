@@ -5,6 +5,7 @@
  * **/
 
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media;
 using brunodfg.tetris.engine.utilities;
 
