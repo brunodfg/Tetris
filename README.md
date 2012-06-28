@@ -1,7 +1,7 @@
 brunodfg.tetris
 ===============
 
-brunodfg.tetris is a silverlight implementation of the famous arcade game tetris. A working example may be found at http://brunodfg.com/arcade/tetris.html
+brunodfg.tetris is a silverlight implementation of the famous arcade game tetris.
 
 License:
 --------
